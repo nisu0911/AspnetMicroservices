@@ -20,7 +20,7 @@ namespace Discount.Grpc.Extensions
 
                 try
                 {
-                    logger.LogInformation("Migrating postresql database.");
+                    logger.LogInformation("Migrating postgresql database.");
 
                     using var connection = new NpgsqlConnection
                         (configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
@@ -46,11 +46,11 @@ namespace Discount.Grpc.Extensions
                     command.CommandText = "INSERT INTO Coupon(ProductName, Description, Amount) VALUES('Samsung 10', 'Samsung Discount', 100);";
                     command.ExecuteNonQuery();
 
-                    logger.LogInformation("Migrated postresql database.");
+                    logger.LogInformation("Migrated postgresql database.");
                 }
                 catch (NpgsqlException ex)
                 {
-                    logger.LogError(ex, "An error occurred while migrating the postresql database");
+                    logger.LogError(ex, "An error occurred while migrating the postgresql database");
 
                     if (retryForAvailability < 50)
                     {
