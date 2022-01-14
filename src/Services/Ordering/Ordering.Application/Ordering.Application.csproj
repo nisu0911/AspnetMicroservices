@@ -10,11 +10,11 @@
 
   <ItemGroup>
     <Folder Include="Behaviour\" />
-    <Folder Include="Features\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
 
 </Project>
