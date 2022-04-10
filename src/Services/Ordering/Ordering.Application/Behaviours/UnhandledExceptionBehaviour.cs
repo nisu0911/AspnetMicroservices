@@ -4,13 +4,13 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Ordering.Application.Behaviour
+namespace Ordering.Application.Behaviours
 {
-    public class UnhandlesExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
+    public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
         private readonly ILogger<IRequest> _logger;
 
-        public UnhandlesExceptionBehaviour(ILogger<IRequest> logger)
+        public UnhandledExceptionBehaviour(ILogger<IRequest> logger)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }

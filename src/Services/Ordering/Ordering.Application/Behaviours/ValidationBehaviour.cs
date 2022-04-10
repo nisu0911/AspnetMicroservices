@@ -7,7 +7,7 @@ using FluentValidation;
 using MediatR;
 using ValidationException = Ordering.Application.Exceptions.ValidationException;
 
-namespace Ordering.Application.Behaviour
+namespace Ordering.Application.Behaviours
 {
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
